@@ -4,7 +4,7 @@ from libs.db import db
 
 class User(db.Model):
     '''用户表'''
-    __tablename__ = 'user'
+    __tablename__ = 'user'  #定义表名
 
     id = db.Column(db.Integer,primary_key=True) #主关键字
     nickname = db.Column(db.String(20),unique=True,nullable=False,index=True) #唯一的，不能为空，索引
