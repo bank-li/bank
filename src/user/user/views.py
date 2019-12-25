@@ -40,7 +40,7 @@ def register():
         birthday = request.form.get('birthday','').strip()
         avater = request.form.get('avater')
 
-        #创建用户
+        #写入用户信息
         user = User(
             nickname=nickname,
             password=gen_password(password),

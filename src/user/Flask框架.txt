@@ -1,0 +1,38 @@
+libs
+    | __init__.py       
+    | db.py          数据库
+    | utils.py        对密码进行加密，测试密码是否正确
+
+migrations
+
+static          bookcss
+    | css
+    | fonts
+    | js
+
+templates
+    | base.html      所有html
+
+user
+      templates
+          | info.html         个人信息
+          | login.html       登陆页面
+          | register.html   注册页面
+    | __init__.py
+    | logics.py       判断是否登陆（装饰器）及保存头像
+    | models.py      定义数据库表
+    | views.py      ------>libs.db/db   libs.db/utils    .models   .logics  完成了登陆，个人信息，退出页面的开发
+                                                                                                           建立当前路径下的蓝图
+weibo
+      templates
+          | edit.html    ------>templates/base.html        编辑微博
+          | index.html   ------>templates/base.html       点赞，编辑，评论，删除
+          | post.html     ------>templates/base.html       发布微博
+          | show.html     ------>templates/base.html
+    | __init__.py
+    | models.py     ------>libs.db/db     #数据库的表结构
+    | views.py    ——>user.templates/login.html    ./model.py/weibo   libs/db   user/models  视图，看蓝图分支的地方，判断要显示的内容，及管理
+
+main.py      ------>libs.db/db       配置数据库和连接蓝图分支，跑起来
+manage.py   ------->main.py   libs.db/db  user/models  weibo/models  libs/utils
+ 管理者，掌管全部分支，绑定app与db，管理一些测试用户及微博
